@@ -3,8 +3,12 @@ package com.company.jmixpm.screen.user;
 import com.company.jmixpm.app.UsersService;
 import com.company.jmixpm.entity.Project;
 import com.company.jmixpm.entity.User;
+import com.company.jmixpm.screen.userprojects.UserProjectsScreen;
 import io.jmix.core.DataManager;
 import io.jmix.core.LoadContext;
+import io.jmix.ui.ScreenBuilders;
+import io.jmix.ui.action.Action;
+import io.jmix.ui.component.GroupTable;
 import io.jmix.ui.navigation.Route;
 import io.jmix.ui.screen.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,10 @@ public class UserBrowse extends StandardLookup<User> {
     private UsersService usersService;
     @Autowired
     private DataManager dataManager;
+    @Autowired
+    private ScreenBuilders screenBuilders;
+    @Autowired
+    private GroupTable<User> usersTable;
 
     private Project filterProject;
 
@@ -35,5 +43,19 @@ public class UserBrowse extends StandardLookup<User> {
             return usersService.getUsersNotInProject(filterProject, query.getFirstResult(), query.getMaxResults());
         }
         return dataManager.loadList(loadContext);
+    }
+
+    @Subscribe("usersTable.showUserProjects")
+    public void onUsersTableShowUserProjects(Action.ActionPerformedEvent event) {
+        User selected = usersTable.getSingleSelected();
+        if (selected == null) {
+            return;
+        }
+
+        screenBuilders.screen(this)
+                .withScreenClass(UserProjectsScreen.class)
+                .build()
+                .withUser(selected)
+                .show();
     }
 }

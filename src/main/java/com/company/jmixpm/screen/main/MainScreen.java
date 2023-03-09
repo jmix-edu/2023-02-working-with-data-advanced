@@ -1,6 +1,7 @@
 package com.company.jmixpm.screen.main;
 
 import com.company.jmixpm.entity.Project;
+import com.company.jmixpm.entity.Task;
 import io.jmix.core.DataManager;
 import io.jmix.ui.ScreenTools;
 import io.jmix.ui.component.AppWorkArea;
@@ -14,12 +15,15 @@ import io.jmix.ui.screen.Subscribe;
 import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiControllerUtils;
 import io.jmix.ui.screen.UiDescriptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @UiController("MainScreen")
 @UiDescriptor("main-screen.xml")
 @Route(path = "main", root = true)
 public class MainScreen extends Screen implements Window.HasWorkArea {
+    private static final Logger log = LoggerFactory.getLogger(MainScreen.class);
 
     @Autowired
     private ScreenTools screenTools;
@@ -55,5 +59,13 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
                 UiControllerUtils.getScreenContext(this).getScreens());
 
         screenTools.handleRedirect();
+
+        /*Task task = dataManager.load(Task.class)
+                .all()
+                .one();
+
+        Project project = task.getProject();
+
+        log.info(project.getId() + "");*/
     }
 }

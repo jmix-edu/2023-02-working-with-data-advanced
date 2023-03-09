@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:dynattr="http://jmix.io/schema/dynattr/ui"
         caption="msg://taskEdit.caption"
         focusComponent="form">
     <data>
@@ -13,6 +14,7 @@
         </instance>
     </data>
     <facets>
+        <dynattr:dynamicAttributes/>
         <dataLoadCoordinator auto="true"/>
         <screenSettings id="settingsFacet" auto="true"/>
     </facets>

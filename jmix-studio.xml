@@ -32,6 +32,16 @@
       </entry>
     </moduleSettings>
   </component>
+  <component name="JmixLiquibaseChangesConfig">
+    <exclude-change idName="PROJECT_USER_LINK#PROJECT_ID" tagName="dropColumn" />
+    <exclude-change idName="PROJECT_USER_LINK#PROJECT_ID" tagName="addColumn" />
+    <exclude-change idName="ROADMAP#PROJECT_ID" tagName="dropColumn" />
+    <exclude-change idName="ROADMAP#PROJECT_ID" tagName="addColumn" />
+    <exclude-change idName="TASK_#PROJECT_ID" tagName="dropColumn" />
+    <exclude-change idName="TASK_#PROJECT_ID" tagName="addColumn" />
+    <exclude-change idName="PROJECT#TOTAL_ESTIMATED_EFFORTS" tagName="addNotNullConstraint" />
+    <exclude-change idName="PROJECT#TOTAL_ESTIMATED_EFFORTS" tagName="addPrimaryKey" />
+  </component>
   <component name="JmixPluginProjectSettings">
     <option name="savedDbProperties">
       <list>
