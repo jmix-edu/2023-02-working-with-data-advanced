@@ -20,6 +20,10 @@
               caption="msg://com.company.jmixpm.screen.customerserach/customerSerachScreen.caption"/>
         <item screen="CustomerSubstringSearchScreen"
               caption="msg://com.company.jmixpm.screen.customersubstringsearch/customerSubstringSearchScreen.caption"/>
+        <item screen="TaskEntityLogScreen"
+              caption="msg://com.company.jmixpm.screen.taskentitylog/taskEntityLogScreen.caption"/>
+        <item screen="ProjectSnapshotScreen"
+              caption="msg://com.company.jmixpm.screen.projectsnapshot/projectSnapshotScreen.caption"/>
     </menu>
 
 </menu-config>

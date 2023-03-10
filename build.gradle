@@ -46,6 +46,8 @@ dependencies {
 
     implementation 'io.jmix.dynattr:jmix-dynattr-starter'
     implementation 'io.jmix.dynattr:jmix-dynattr-ui-starter'
+    implementation 'io.jmix.audit:jmix-audit-ui-starter'
+    implementation 'io.jmix.audit:jmix-audit-starter'
 }
 
 test {

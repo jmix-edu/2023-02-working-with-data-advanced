@@ -11,7 +11,7 @@
                 <property name="assignee" fetchPlan="_base"/>
                 <property name="project" fetchPlan="_base"/>
             </fetchPlan>
-            <loader id="tasksDl">
+            <loader id="tasksDl" dynamicAttributes="true">
                 <query>
                     <![CDATA[select e from Task_ e]]>
                 </query>
@@ -57,6 +57,7 @@
                 <column id="project"/>
                 <column id="isClosed"/>
                 <column id="supposedEndDate"/>
+                <column id="+taskNotesDescription"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"

@@ -10,7 +10,7 @@
                 <property name="assignee" fetchPlan="_base"/>
                 <property name="project" fetchPlan="_base"/>
             </fetchPlan>
-            <loader/>
+            <loader dynamicAttributes="true"/>
         </instance>
     </data>
     <facets>
@@ -44,8 +44,14 @@
                 <comboBox id="labelField" property="label"/>
                 <checkBox id="isClosedField" property="isClosed"/>
                 <field id="projectLabelsField" property="project.projectLabels"/>
+                <textArea id="descriptionField" property="+taskNotesDescription"/>
             </column>
         </form>
+        <dynattr:dynamicAttributesPanel id="dynamicAttributesPanel"
+                                        width="350px"
+                                        cols="2"
+                                        rows="2"
+                                        dataContainer="taskDc"/>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>
